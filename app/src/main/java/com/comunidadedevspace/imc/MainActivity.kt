@@ -10,17 +10,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val edtPeso = findViewById<TextInputEditText> (R.id.edt_peso)
+        val edtPeso = findViewById<TextInputEditText>(R.id.edt_peso)
         val edtAltura = findViewById<TextInputEditText>(R.id.edt_altura)
 
-        val btnCalcular = findViewById<Button>(R. id.btn_calcular)
+        val btnCalcular = findViewById<Button>(R.id.btn_calcular)
 
         btnCalcular.setOnClickListener {
-            val peso =edtPeso.text
-            val altura =edtAltura.text
+            val peso : Float = edtPeso.text.toString().toFloat()
+            val altura: Float = edtAltura.text.toString().toFloat()
 
-            println(" ph açao do botao " + altura)
+            val alturaQ2 = altura * altura
+            val resultado = peso / alturaQ2
 
+
+            println(" ph açao do botao " + resultado)
         }
+
     }
 }
